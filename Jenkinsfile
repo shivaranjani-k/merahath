@@ -8,16 +8,16 @@ pipeline {
         }
         stage('compile') { 
             steps {
-                sh "compile"
+                sh "mvn compile"
             }
         }
         stage('Deploy') { 
             steps {
-                sh "test"
+                sh "mvn test"
             }
             stage('Package') { 
             steps {
-                sh "package"
+                sh "mvn package"
             }
         }
     }
